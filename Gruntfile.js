@@ -1,15 +1,15 @@
 module.exports=function (grunt) {
     // 构建的具体配置信息
     grunt.initConfig({
-        csslint:{
+        eslint:{
             options:{
-               csslintrc:'./.csslintrc'
+                eslintrc:'./.eslintrc'
             },
-            src:['*.css']
+            target:['*.js']
         }
     }); 
     // 加载插件，多个插件写多行
-    grunt.loadNpmTasks('grunt-contrib-csslint');
+    grunt.loadNpmTasks('grunt-eslint');
     // 定义构建任务清单
-    grunt.registerTask('default',['csslint']);
-  }
+    grunt.registerTask('default',['eslint']);
+};
