@@ -1,15 +1,17 @@
 module.exports=function (grunt) {
-    // 构建的具体配置信息
     grunt.initConfig({
-        eslint:{
-            options:{
-                configFile:'./.eslintrc.json'
-            },
-            target:['*.js']
+        mocha: {
+          test: {
+            src: ['test/index.html'],
+          },
+          options: {
+            run: true,
+            reporter: 'Dot'
+          }
         }
-    }); 
-    // 加载插件，多个插件写多行
-    grunt.loadNpmTasks('grunt-eslint');
-    // 定义构建任务清单
-    grunt.registerTask('default',['eslint']);
+      });
+    
+      grunt.loadNpmTasks('grunt-mocha');
+    
+      grunt.registerTask('default', ['mocha']);
 };
