@@ -1,13 +1,14 @@
-module.exports=function (grunt) {
+module.exports=function (grunt) { 
+    //构建的具体配置信息
     grunt.initConfig({
-        imagemin:{
-            files:{
-                expand:true,
-                src:['images/*.{png,jpg,gif}'],
-                dest:'dist/'
-            }
-        }
+       concat:{
+           files:{
+               src:['rectangle.js','util.js'],
+               dest:'dist/bundle.js'
+           }
+       }
     });
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.registerTask('default',['imagemin']);
-  }
+    // 加载插件，多个插件写多行
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.registerTask('default', ['concat']);
+};
