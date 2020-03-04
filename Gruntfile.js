@@ -1,14 +1,13 @@
 module.exports=function (grunt) { 
-    //构建的具体配置信息
     grunt.initConfig({
-       concat:{
+        sprite:{
            files:{
-               src:['rectangle.js','util.js'],
-               dest:'dist/bundle.js'
+               src:['images/*.png'],
+               dest:'dist/bundle.png',
+               destCss:'dist/sprite.css'
            }
        }
     });
-    // 加载插件，多个插件写多行
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.registerTask('default', ['concat']);
+    grunt.loadNpmTasks('grunt-spritesmith');
+    grunt.registerTask('default', ['sprite']);
 };
