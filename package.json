@@ -19,7 +19,7 @@
   "homepage": "https://github.com/wangyingyingwyy/grunt-demo#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "grunt": ">=0.4.5",
-    "grunt-mocha": "^0.4.12"
+    "grunt-mocha": "^0.4.12",
+    "grunt": "^0.4.5"
   }
 }
